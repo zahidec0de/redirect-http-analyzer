@@ -1,27 +1,3 @@
-
-"""
----WHAT THIS SCRIPT DOES?---
-
-A) Redirect Chain Analysis
-    -Starts with the input URL
-    - Follows up to 5 redirects
-    - Records each step
-    - Flags if any step uses HTTP
-
-B) Static HTML Analysis
-
-    - Extracts insecure links from:
-    - <a href="http://...">
-    - <meta http-equiv="refresh" content="url=http://...">
-    - Does NOT execute JavaScript (same limitation as CTM360)
-
-C) Output
-    - Clear human-readable report
-    - Full JSON for ingestion
-
-"""
-
-
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
@@ -108,14 +84,13 @@ def analyze_website(url, max_redirects=5, timeout=8):
 
 
 # ---------------------------
-# Usage:
+# Usage
 # ---------------------------
 if __name__ == "__main__":
-    test_url = "https://lpa.mediawebfactor.com/slk_7877_3_ar_fm_mwt"
+    test_url = "https://example.com"
     result = analyze_website(test_url)
 
-    print("\n--- HUMAN REPORT ---")
-    print(f"Target: {result['target_url']}")
+    print(f"\nTarget: {result['target_url']}")
     print(f"Redirect Chain:")
     for step in result["redirect_chain"]:
         print(f"  - {step['status']} → {step['url']}")
