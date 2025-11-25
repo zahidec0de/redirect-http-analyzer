@@ -9,8 +9,8 @@ A Python script that analyzes website redirect chains and scans static HTML to d
 
 ### B) Static HTML Analysis
 - Extracts insecure links from:
-- <a href="http://...">
-- <meta http-equiv="refresh" content="url=http://...">
+    - <a href="http://...">
+    - <meta http-equiv="refresh" content="url=http://...">
 
     
 ### C) Output
