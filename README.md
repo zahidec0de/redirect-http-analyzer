@@ -8,11 +8,11 @@ A Python script that analyzes website redirect chains and scans static HTML to d
 - Flags if any step uses HTTP
 
 ### B) Static HTML Analysis
-    - Extracts insecure links from:
-    - <a href="http://...">
-    - <meta http-equiv="refresh" content="url=http://...">
-    - Does NOT execute JavaScript (same limitation as CTM360)
+- Extracts insecure links from:
+- <a href="http://...">
+- <meta http-equiv="refresh" content="url=http://...">
+
     
 ### C) Output
-    - Clear human-readable report
-    - Full JSON for ingestion
+- Clear human-readable report
+- Full JSON for ingestion
